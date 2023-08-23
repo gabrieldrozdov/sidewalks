@@ -1,0 +1,45 @@
+:root {
+	--imgsize: 40dvh;
+}
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	user-select: none;
+}
+html {
+	font-size: 12px;
+}
+body {
+	font-family: limkin, serif;
+	background-color: black;
+	color: white;
+}
+.walk-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+.walk-steps {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 9;
+	pointer-events: none;
+	transform: rotate(15deg);
+	transition: transform .1s;
+}
+.walk-steps-child {
+	transition: transform .4s cubic-bezier(0.16, 1, 0.3, 1), filter .4s, opacity .2s;
+	position: absolute;
+	width: 0;
+	height: 0;
+}
+.walk-steps-child-img {
+	height: var(--imgsize);
+	/* aspect-ratio: 1/1; */
+	box-shadow: 0 0 10px rgba(0,0,0,.5);
+}
